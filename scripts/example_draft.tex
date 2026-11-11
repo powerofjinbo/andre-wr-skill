@@ -1,0 +1,75 @@
+% Example input for andre_style_check.py.
+% The study is invented: a test-beam measurement of the time resolution of a small
+% scintillator timing detector. Every number in it is made up.
+% The text is written on purpose in a style that is not his: short sentences, "We" at
+% the start of most of them, ", so" as the causal join, long captions, "see Fig.".
+
+\section{Setup}
+\label{sec:setup}
+
+We test a small scintillator tile in a 120~GeV pion beam.
+We read out the tile with two silicon photomultipliers.
+We place the tile 2~m downstream of a reference counter.
+We digitize both signals at 5~GS/s.
+The trigger is a coincidence of two beam counters.
+The beam spot is wider than the tile, so we select tracks that point to its central region.
+For each run, we record approximately 50,000 events.
+
+We utilize a constant-fraction threshold to extract the arrival time; see Fig.~\ref{fig:pulse}.
+The threshold is 20\% of the pulse amplitude.
+With this choice, the time walk is very small.
+It should be noted that we do not correct for the residual walk.
+We check the baseline before each pulse.
+We reject events with a second pulse.
+We align the tile with the beam axis by hand.
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{pulse}
+\caption{The pulse shape of the tile for 120~GeV pions. We fit the leading edge with a
+straight line. The fit is very stable because the pulses are large. The red line shows
+the fit and the blue points show the samples. As can be seen, the residual time walk is
+small.}
+\label{fig:pulse}
+\end{figure}
+
+\section{Time resolution}
+\label{sec:resolution}
+
+We average the times of the two sensors, so the result does not depend on the impact point.
+We fit the time difference to the reference counter with a Gaussian.
+We observe a width of approximately 40~ps.
+The reference counter is much faster than the tile, so we neglect its jitter.
+In addition, we repeat the fit at five bias voltages (Fig.~\ref{fig:voltage}).
+Additionally, we leverage the track position to study the edges of the tile, as described
+in Sec.~\ref{sec:setup}.
+
+The resolution improves with the voltage.
+It reaches 38~ps at 58~V.
+We also vary the threshold between 10\% and 30\%.
+We find no change in the resolution.
+The light yield is lower near the edges, so the resolution is worse there.
+As a result, we restrict the measurement to the central region.
+We note that the resolution that we obtain after this restriction is significantly better
+than the one that we obtained with the full tile and that it stays below the requirement
+of the experiment over the whole range of bias voltages that we scanned in this test beam.
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{voltage}
+\caption{This figure shows the time resolution for different bias voltages. The resolution
+improves with the voltage because the gain of the sensors rises. At the highest voltages
+the curve flattens because the dark-count rate rises. The best value is 38~ps, which is an
+excellent result.}
+\label{fig:voltage}
+\end{figure}
+
+\section{Conclusions}
+
+We measured the time resolution of a small scintillator tile in a test beam.
+We find 38~ps at the best bias voltage.
+The requirement is 50~ps, so the tile is suitable.
+Importantly, the so-called constant-fraction method is robust.
+Our state-of-the-art readout outperforms the previous one.
+We see no dependence on the beam intensity.
+We also tested a second tile.
+We find the same resolution for it.
+For the next test beam, we plan a larger tile, a thicker foil, etc.
